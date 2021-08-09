@@ -35,6 +35,10 @@ WHERE e.deptno=d.deptno
 ORDER BY d.loc
 
 7.	Find the number or different employees and number of departments.
+SELECT COUNT(DISTINCT(e.ename)) No_Of_Emp,COUNT(DISTINCT(d.deptno)) No_Of_Dept
+FROM emp e
+JOIN dept d
+
 8.	Display the employees who were hired before their managers.
 SELECT e.empno,e.ename
 FROM emp e
@@ -56,6 +60,7 @@ WHERE mgr IS NULL
 SELECT ename,deptno
 FROM emp 
 WHERE ename LIKE 'Smith'
+
 12.	Display the salesmen who are not in Boston
 SELECT e.ename
 FROM emp e
@@ -79,6 +84,7 @@ SELECT e.*
 FROM emp e
 JOIN dept d ON e.deptno=d.deptno
 WHERE d.loc LIKE 'Chicago'
+
 16.	Find the names of all employees whose salaries are greater than the minimum salary for the Manager
 SELECT ename,sal
 FROM emp
